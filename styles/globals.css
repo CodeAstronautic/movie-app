@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2bd17e;
+  --background-color: #093545;
+  --input-color: #224957;
+  --card-color: #092c39;
+  --error-color: #eb5757;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family:  "Montserrat", sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background-color: var(--background-color);
+  background-image: url('/asset/image/svg/background-image.svg');
+  background-position: bottom; /* Position at the bottom */
+  background-repeat: repeat-x; /* Prevent repeating */
+  background-size: contain; /* Adjust size, or use 'contain' for different effects */
+  /* background-attachment: fixed; */
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media not all and (min-width: 640px){
+  
+body {
+  background-size: auto; /* Adjust size, or use 'contain' for different effects */
+
+}
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 18px; /* Adjust size as needed */
+  height: 18px; /* Adjust size as needed */
+  background-color: var(--input-color); /* Tailwind gray-600 for example */
+  border-radius: 4px; /* Rounded corners */
+  border: 1px solid #6B7280; /* Tailwind gray-500 for example */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-checkbox:checked {
+  background-color:  var(--primary-color); /* Tailwind blue-500 for example */
+  border-color:  var(--primary-color); /* Tailwind blue-600 for example */
+}
+
+.custom-checkbox:checked::before {
+  content: '✔'; /* Checkmark or use a custom icon */
+  color: white;
+  font-size: 12px; /* Adjust size as needed */
+}
